@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h1
+    className="title"
+  >
+    Double Play Sports Bar
+  </h1>
+  <p>
+    <img
+      className="four-stars"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+    />
+    <span>
+      7
+        reviews
+    </span>
+  </p>
+  <p>
+    $$
+    <span>
+      <a
+        className="typeFood"
+        href="https://www.yelp.com/c/las-vegas/sports Bars"
+      >
+         
+        Sports Bars
+         
+      </a>
+      <a
+        className="typeFood"
+        href="https://www.yelp.com/c/las-vegas/pizza"
+      >
+         
+        Pizza
+         
+      </a>
+      <a
+        className="typeFood"
+        href="https://www.yelp.com/c/las-vegas/restaurants"
+      >
+         
+        Restaurants
+         
+      </a>
+      <a
+        className="typeFood"
+        href="https://www.yelp.com/c/las-vegas/nightlife"
+      >
+         
+        Nightlife
+         
+      </a>
+      <a
+        className="typeFood"
+        href="https://www.yelp.com/c/las-vegas/bars"
+      >
+         
+        Bars
+         
+      </a>
+        
+    </span>
+  </p>
+</div>
+`;

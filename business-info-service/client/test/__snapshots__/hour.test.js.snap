@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="smalltable col-md-5"
+  >
+    <p>
+      <i
+        className="far fa-clock"
+        style={
+          Object {
+            "color": "green",
+          }
+        }
+      />
+      <span
+        style={
+          Object {
+            "marginLeft": "10px",
+          }
+        }
+      >
+        Today:
+      </span>
+       
+      <span>
+        <span>
+          17:00-22:00
+        </span>
+        <span
+          style={
+            Object {
+              "marginLeft": "10px",
+            }
+          }
+        >
+          <b
+            style={
+              Object {
+                "color": "green",
+              }
+            }
+          >
+            Open Now
+          </b>
+        </span>
+      </span>
+    </p>
+    <p
+      style={
+        Object {
+          "borderTop": "1px solid #e6e6e6",
+          "height": "1px",
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "marginLeft": "10px",
+        }
+      }
+    >
+      <span
+        className="money"
+      >
+        $$$
+      </span>
+        Price range
+      <b
+        style={
+          Object {
+            "marginLeft": "10px",
+          }
+        }
+      >
+        <span>
+          $31 - 60
+        </span>
+      </b>
+    </p>
+  </div>
+  <h3
+    className="hours"
+  >
+    Hours
+  </h3>
+  <table
+    className="hoursTable"
+  >
+    <tbody>
+      <tr>
+        <th>
+          <b>
+            Mon
+          </b>
+        </th>
+        <td>
+          17:00-22:00
+           
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <b>
+            Tue
+          </b>
+        </th>
+        <td>
+          17:00-22:00
+           
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <b>
+            Wed
+          </b>
+        </th>
+        <td>
+          17:00-22:00
+           
+          <b
+            style={
+              Object {
+                "color": "green",
+              }
+            }
+          >
+            Open Now
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <b>
+            Thu
+          </b>
+        </th>
+        <td>
+          17:00-22:00
+           
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <b>
+            Fri
+          </b>
+        </th>
+        <td>
+          17:00-22:30
+           
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <b>
+            Sat
+          </b>
+        </th>
+        <td>
+          17:00-22:30
+           
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <b>
+            Sun
+          </b>
+        </th>
+        <td>
+          17:00-22:00
+           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <i
+      className="fas fa-pencil-alt"
+    />
+        
+    <a
+      className="typeFood"
+      href="https://www.yelp.com/biz_attribute?biz_id=07AZL5XenCQ_-op_onKLdw"
+    >
+      Edit business info
+    </a>
+  </p>
+</div>
+`;

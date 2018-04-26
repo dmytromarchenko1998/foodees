@@ -1,0 +1,127 @@
+ .money {
+    font-weight: bold;
+    color: #41a700;
+ }
+ 
+ #map {
+	width: 30vw;
+	height: 200px;
+  min-width: 400px;
+	background-color: grey;
+  border: 1px solid #ccc;
+  margin-top: 7px;
+}
+
+.bus-loc-map-pin {
+	color: #666;
+	margin-right: 10px;
+}
+
+.HeaderStars {
+  width: 132px;
+  height: 24px;
+  background: url(https://s3-us-west-1.amazonaws.com/foodeephotos/yelpStars.png?versionId=null) no-repeat;
+  background-size: 132px 560px;
+  display: inline-block;
+  padding-right: 5px;
+}
+.HeaderRating {
+  /*background-color: red;*/
+  color: #666;
+  margin:2px 0px 0px 10px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.title {
+    padding-top: 6px;
+    font-size: 36px;
+    line-height: 1.16667em;
+    color :#333;
+}
+.typeFood {
+  color: #0073bb;
+    text-decoration: none;;
+}
+.typeFood:hover {
+    text-decoration: underline;
+}
+.hours {
+    font-size: 16px;
+    line-height: 1.3125em;
+    color: #d32323;
+    margin-left: 27px;
+}
+.hoursTable {
+    margin-left: 27px;
+    margin-bottom: 6px;
+    width: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.hoursForDay {
+  display: flex;
+  align-items: baseline;
+}
+/*.timeForDay {
+  align-self: flex-end;
+}*/
+.editInfo {
+  margin-left: 27px;
+}
+.businessInfoHeader {
+  font-size: 16px;
+  line-height: 1.3125em;
+  color: #d32323;
+}
+.businessInfoBody {
+  margin-left: 27px;
+}
+.smalltable {
+    padding: 11px;
+    background-color: #f5f5f5;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin: 15px;
+}
+.reservationInput {
+  width: 274px;
+}
+.ReservationButton {
+  border-color: #28781e;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  background: #3cb52e;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+.selectContainer {
+  margin: 5px;
+  width: 150px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.reservationForm {
+  width: 286px;
+  /*background-color: red;*/
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.ReservationButton:hover {
+    background: #41c532;
+}
+#res-Time {
+  width: 60px;
+}
+.numberPeopleDropDown {
+  width: 80px;
+}
+.mapbox {
+    background: #fff;
+    border: 1px solid #ccc;
+}
