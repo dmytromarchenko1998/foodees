@@ -1,0 +1,222 @@
+/*<---NearMe Container--->*/
+.nearMeContainer {
+  font-family: "arial";
+  background-color: #ffffff;
+  display: inline-flex;
+  flex-direction: column;
+  border-color: black;
+}
+
+.nearMeheader {
+  color:#d32323;
+  font-size: 16px;
+  line-height: 1.3125em;
+  font-weight: bold;
+}
+
+.nearMeFooter {
+  color:#0073bb;
+  font-size: 12px;
+}
+/*<---NearMe List--->*/
+
+.nearMeList {
+  list-style-type:none;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+/*<---NearMe List Item--->*/
+
+.nearMeListItem {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.nearMeListItemDescription :first-child {
+  margin:2px 0px 0px 10px;
+  color: #0073bb;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nearMeListItemDescription :first-child:hover, .nearMeFooter :first-child:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.nearMeListStars {
+  width: 82px;
+  height: 14px;
+  background: url(https://s3-us-west-1.amazonaws.com/foodeephotos/yelpStars.png?versionId=null) no-repeat;
+  background-size: 132px 560px;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.nearMeRatings {
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #666;
+  margin:2px 0px 0px 10px;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.nearMeListItemDescription {
+  display: inline-flex;
+  flex-direction: column;
+  height: 80px;
+  margin: 0px;
+}
+
+.nearMeListItemImg {
+  object-fit: cover;
+  width:60px;
+  height:60px;
+  border-radius:5px;
+  display:inline-block;
+}
+
+/*<---NearMe Modal--->*/
+
+.nearMeModalPage {
+  display: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/*<---NearMe Modal Content--->*/
+
+.nearMeModalContainer {
+  display: flex;
+  flex-flow: column;
+  border-radius: 3px;
+  max-width: 82vw;
+  background-color: #ffffff;
+  max-height: calc(100vh - 100px);
+  box-shadow: 0px 0px 10px #59595a;
+}
+
+.nearMeModalHeader {
+  text-align: center;
+  width: 100%;
+}
+
+.nearMeModalHeader :first-child {
+  font-weight: bold;
+  color: #d32323;
+  margin: 0px;
+}
+
+.nearMeModalContent {
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.nearMeModalRow {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.nearMeModalItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 20vw;
+}
+
+.nearMeModalItemContent {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  background: no-repeat;
+  background-size:cover;
+  width: 19vw;
+  height: 19vw;
+  border-radius: 5px;
+  background-position: center center;
+}
+
+.nearMeModalItemContent:hover {
+  box-shadow: 0px 0px 5px black;
+}
+
+.nearMeModalItemDescription {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  background-color: rgba(0,0,0,0.4);
+  text-overflow: ellipsis;
+  width: 19vw;
+  height: 3vw;
+  color: white;
+  font-size: .8vw;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.closeNearMeModal {
+  display: inline-flex;
+  position: relative;
+  top: -4vh;
+  line-height: 0px;
+  align-self: flex-end;
+  padding:0px 7px;
+  color: #999999;
+  line-height: 
+  font-weight: bold;
+  align-items: center;
+  margin: 0px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+  text-decoration: none;
+  text-align: right;
+  font-weight: bold;
+}
+
+#xicon {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.nearMeModalItemDescription > .nearMeRatings {
+  padding-top: .2vw;
+  display: block;
+  color: white;
+}
+
+.nearMeModalItemDescription > a {
+  padding-top: .5vw;
+  padding-left: .5vw;
+  color: white;
+  font-size: 1vw;
+  line-height: 0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nearMeModalItemDescription > a:hover {
+  color: #f3f1f4;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.closeNearMeModal:hover,
+.closeNearMeModal:focus {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}

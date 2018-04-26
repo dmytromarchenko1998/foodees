@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  flex-flow: column; 
+  align-items: center;
+}
+.mainContainer {
+  display: flex;
+  flex-flow: column;
+  width: 70vw;
+  min-width: 1200px;
+  max-width: 1600px;
+}
+.headerInfo {
+  display: flex;
+}
+.body {
+  display: flex;
+}
+.headerInfo {
+  display: flex;
+  flex-flow: row; 
+  justify-content: center;
+  align-items: center;
+}
+.businessLocation {
+  display: flex;
+  justify-content: center;
+}
+#NearMe {
+  margin-left: 27px;
+}
+.pageHeader {
+  background-color: rgb(205,31,32);
+  width: 100vw;
+  height: 91px;
+}
+
+#yelpScreenShot {
+  height: 91px;
+  width: 100vw;
+  max-width: 1500px;
+  object-fit: cover;
+}
