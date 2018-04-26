@@ -12,7 +12,7 @@ class PhotoModal extends React.Component {
 
 
   changeCount(type) {
-  axios.patch(`/api/biz_photos/${this.props.photo_id}/${type}`)
+  axios.patch(`http://34.216.115.125/:3001/api/biz_photos/${this.props.photo_id}/${type}`)
     .then(response => {
     console.log(response.data)
     })

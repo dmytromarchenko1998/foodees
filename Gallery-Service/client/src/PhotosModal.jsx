@@ -54,7 +54,7 @@ class PhotosModal extends React.Component {
 
 
   openOnePhoto(photo_id) {
-    axios.get(`http://localhost:3001/api/biz_photos/${this.props.biz_id}`, {
+    axios.get(`http://34.216.115.125:3001/api/biz_photos/${this.props.biz_id}`, {
       params: {
         select: photo_id
       }
@@ -91,7 +91,7 @@ class PhotosModal extends React.Component {
 
     displayPhotos(query) {
       $('#search').val('');
-      axios.get(`http://localhost:3001/api/biz_photos/${this.props.biz_id}`, {
+      axios.get(`http://34.216.115.125:3001/api/biz_photos/${this.props.biz_id}`, {
         params: query
       })
       .then(response => 

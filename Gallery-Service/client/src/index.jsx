@@ -18,7 +18,7 @@ class App extends React.Component {
 	}
 
   componentDidMount() {
-    axios.get(`http://localhost:3001/api/biz/${this.state.biz_id}`)
+    axios.get(`http://34.216.115.125:3001/api/biz/${this.state.biz_id}`)
       .then(response => {
 			  this.setState({
         // grab first 2 photos in db
