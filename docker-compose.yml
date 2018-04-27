@@ -2,7 +2,7 @@ version: '2'
 
 services:
   nearme:
-    image: dmytromarchenko1998/nearme-service:nearme
+    build: NearMe-service/ 
     depends_on:
       - 'database'
     ports: 

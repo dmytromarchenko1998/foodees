@@ -7,7 +7,7 @@ class NearMe extends React.Component {
     super();
     this.state = {
       category:'',
-      business_id:document.URL.split('/biz/')[1],
+      business_id:document.URL.split('/')[4],
       nearby:undefined    
     };
   }

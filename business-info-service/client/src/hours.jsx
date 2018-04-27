@@ -111,7 +111,7 @@ class Hours extends React.Component {
 
 
 	render () {
-    console.log(this.props.infors.hours.Monday)
+    // console.log(this.props.infors.hours.Monday)
 		return (
 			<div>
 			 	<div className="smalltable col-md-5">
