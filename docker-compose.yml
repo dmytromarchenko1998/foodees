@@ -14,7 +14,7 @@ services:
     ports: 
       - '3001:3001'
   business-info:
-    image: dmytromarchenko1998/nearme-service:business-info
+    build: business-info-service/ 
     depends_on:
       - 'database'
     ports: 

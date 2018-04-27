@@ -52,7 +52,7 @@ class Reservation extends React.Component {
 	  		var timeArr = [];
 	  		var timeLength = closedHour - openHour;
 	  		// console.log(timeLength);
-	  		if (timeLength < 0) {
+	  		if (timeLength <= 0) {
 	  			timeLength += 24;
 	  		}
 	  		var year = moment().toDate().getFullYear().toString();
