@@ -1,17 +1,17 @@
 /*<---NearMe Container--->*/
 .nearMeContainer {
+  font-family: "arial";
+  background-color: #ffffff;
   display: inline-flex;
   flex-direction: column;
-  background-color: #ffffff;
   border-color: black;
-  font-family: "arial";
 }
 
 .nearMeheader {
   color:#d32323;
   font-size: 16px;
-  font-weight: bold;
   line-height: 1.3125em;
+  font-weight: bold;
 }
 
 .nearMeFooter {
@@ -21,9 +21,9 @@
 /*<---NearMe List--->*/
 
 .nearMeList {
+  list-style-type:none;
   display: inline-flex;
   flex-direction: column;
-  list-style-type:none;
   padding: 0px;
 }
 
@@ -37,8 +37,8 @@
 .nearMeListItemDescription :first-child {
   margin:2px 0px 0px 10px;
   color: #0073bb;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
 }
 .nearMeListItemDescription :first-child:hover, .nearMeFooter :first-child:hover{
   text-decoration: underline;
@@ -46,21 +46,21 @@
 }
 
 .nearMeListStars {
-  display: inline-block;
-  background-size: 132px 560px;
-  background: url(https://s3-us-west-1.amazonaws.com/foodeephotos/yelpStars.png?versionId=null) no-repeat;
   width: 82px;
   height: 14px;
+  background: url(https://s3-us-west-1.amazonaws.com/foodeephotos/yelpStars.png?versionId=null) no-repeat;
+  background-size: 132px 560px;
+  display: inline-block;
   padding-right: 5px;
 }
 
 .nearMeRatings {
-  display: inline-flex;
-  flex-direction: row;
-  margin:2px 0px 0px 10px;
-  color: #666;
   font-size: 12px;
   line-height: 1.5em;
+  color: #666;
+  margin:2px 0px 0px 10px;
+  display: inline-flex;
+  flex-direction: row;
 }
 
 .nearMeListItemDescription {
@@ -71,14 +71,14 @@
 }
 
 .nearMeListItemImg {
-  display:inline-block;
+  object-fit: cover;
   width:60px;
   height:60px;
   border-radius:5px;
-  object-fit: cover;
+  display:inline-block;
 }
 
-/*<---NearMe Modal Container--->*/
+/*<---NearMe Modal--->*/
 
 .nearMeModalPage {
   display: none;
@@ -95,49 +95,17 @@
   background-color: rgba(0,0,0,0.4);
 }
 
+/*<---NearMe Modal Content--->*/
+
 .nearMeModalContainer {
   display: flex;
   flex-flow: column;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px #59595a;
-  max-width: 82vw;
-  max-height: calc(100vh - 100px);
   border-radius: 3px;
+  max-width: 82vw;
+  background-color: #ffffff;
+  max-height: calc(100vh - 100px);
+  box-shadow: 0px 0px 10px #59595a;
 }
-
-.closeNearMeModal {
-  display: inline-flex;
-  align-self: flex-end;
-  align-items: center;
-  position: relative;
-  margin: 0px;
-  padding:0px 7px;
-  top: -4vh;
-  line-height: 0px;
-  color: #999999;
-  line-height: 
-  font-weight: bold;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.8);
-  text-decoration: none;
-  text-align: right;
-  font-weight: bold;
-}
-
-.closeNearMeModal:hover,
-.closeNearMeModal:focus {
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#xicon {
-  font-size: 30px;
-  margin: 0px;
-}
-
-/*<---NearMe Modal Content--->*/
-
 
 .nearMeModalHeader {
   text-align: center;
@@ -177,10 +145,10 @@
   justify-content: flex-end;
   background: no-repeat;
   background-size:cover;
-  background-position: center center;
-  border-radius: 5px;
   width: 19vw;
   height: 19vw;
+  border-radius: 5px;
+  background-position: center center;
 }
 
 .nearMeModalItemContent:hover {
@@ -192,27 +160,49 @@
   flex-flow: column;
   justify-content: space-around;
   background-color: rgba(0,0,0,0.4);
-  border-radius: 0px 0px 5px 5px;
+  text-overflow: ellipsis;
   width: 19vw;
   height: 3vw;
-  text-overflow: ellipsis;
   color: white;
   font-size: .8vw;
+  border-radius: 0px 0px 5px 5px;
 }
 
+.closeNearMeModal {
+  display: inline-flex;
+  position: relative;
+  top: -4vh;
+  line-height: 0px;
+  align-self: flex-end;
+  padding:0px 7px;
+  color: #999999;
+  line-height: 
+  font-weight: bold;
+  align-items: center;
+  margin: 0px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+  text-decoration: none;
+  text-align: right;
+  font-weight: bold;
+}
+
+#xicon {
+  font-size: 30px;
+  margin: 0px;
+}
 
 .nearMeModalItemDescription > .nearMeRatings {
-  display: block;
   padding-top: .2vw;
+  display: block;
   color: white;
 }
 
 .nearMeModalItemDescription > a {
   padding-top: .5vw;
   padding-left: .5vw;
-  line-height: 0;
   color: white;
   font-size: 1vw;
+  line-height: 0;
   font-weight: bold;
   text-decoration: none;
 }
@@ -221,4 +211,12 @@
   color: #f3f1f4;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.closeNearMeModal:hover,
+.closeNearMeModal:focus {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
