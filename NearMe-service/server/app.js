@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 // })
 app.use(cors({'origin':'*'}));
 app.get('/api/:id', (req, res) => {
-  var business_id = req.url.split('/api/')[1];
+  var business_id = document.URL.split('/')[4];
   console.log(business_id);
   // var query = Business.find({business_id:'-a857YYdjzgOdOjFFRsRXQ'});
   var query = Business.find({business_id:business_id});
