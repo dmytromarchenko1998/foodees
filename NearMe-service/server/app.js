@@ -21,6 +21,9 @@ app.get('/api/:id', (req, res) => {
   query.exec((err, businesses) => {
     console.log('daaaaaawg', businesses);
     var selectedBusiness = businesses[0];
+    if (selectedBusiness === undefined) {
+      res.status(500).send('not valid business_id')
+    }
     var categoryArr = businesses[0].categories;
     for (var i =0; i < categoryArr.length; i++) {
       if (categoryArr[i] === 'Restaurants') {

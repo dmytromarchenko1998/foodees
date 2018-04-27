@@ -11,16 +11,16 @@ app.use(bodyParser.json())
 app.use(cors({'origin':'*'}));
 
 app.get('/info' ,function(req,res){
-	console.log('dbHelpers: ', dbHelpers)
-	var business_id = req.query.business_id;
-	console.log(business_id);
-	dbHelpers.find( {business_id: business_id}, function(err,data){
-		if(err){
-			res.status(404).send("not found");
-		} else {
-			res.status(200).send(data);
-		}
-	})
+  console.log('dbHelpers: ', dbHelpers)
+  var business_id = req.query.business_id;
+  console.log(business_id);
+  dbHelpers.find( {business_id: business_id}, function(err,data){
+    if(err){
+      res.status(404).send("not found");
+    } else {
+      res.status(200).send(data);
+    }
+  })
 })
 app.get('/biz/:id', (req, res) => {
   // var business_id = req.url.split('/biz/');
@@ -29,5 +29,5 @@ app.get('/biz/:id', (req, res) => {
 })
 
 app.listen('3002', function () {
-	console.log('listening on port 3002')
+  console.log('listening on port 3002')
 })
