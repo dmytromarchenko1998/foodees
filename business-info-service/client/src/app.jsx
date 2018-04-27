@@ -22,7 +22,7 @@ class Header extends React.Component {
 
 	componentDidMount() {
 		var app = this;
-    var business_id = document.URL.split('/biz/')[1]
+    var business_id = document.URL.split('/')[4]
 		$.ajax({
 			url : 'http://34.216.115.125:3002/info/',
 			type : 'GET',
@@ -73,7 +73,7 @@ class MainInfo extends React.Component {
 
   componentDidMount() {
     var app = this;
-    var business_id = document.URL.split('/biz/')[1]
+    var business_id = document.URL.split('/')[4]
     $.ajax({
       url : 'http://34.216.115.125:3002/info/',
       type : 'GET',
@@ -126,7 +126,7 @@ class SideBar extends React.Component {
 
   componentDidMount() {
     var app = this;
-    var business_id = document.URL.split('/biz/')[1]
+    var business_id = document.URL.split('/')[4]
     $.ajax({
       url : 'http://34.216.115.125:3002/info/',
       type : 'GET',
