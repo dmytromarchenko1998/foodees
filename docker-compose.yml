@@ -8,19 +8,19 @@ services:
     ports: 
       - '3005:3005'
   gallery:
-    build: Gallery-Service/
+    image: dmytromarchenko1998/nearme-service:gallery
     depends_on:
       - 'database'
     ports: 
       - '3001:3001'
   business-info:
-    build: business-info-service/
+    image: dmytromarchenko1998/nearme-service:business-info
     depends_on:
       - 'database'
     ports: 
       - '3002:3002'
   proxy:
-    build: Dmytro-Proxy/
+    image: dmytromarchenko1998/nearme-service:proxy
     depends_on:
       - 'database'
     ports: 
