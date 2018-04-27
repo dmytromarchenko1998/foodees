@@ -14,13 +14,16 @@ app.use(morgan('dev'));
 // })
 app.use(cors({'origin':'*'}));
 app.get('/api/:id', (req, res) => {
-  var business_id = document.URL.split('/')[4];
+  var business_id = req.param.id;
   console.log(business_id);
   // var query = Business.find({business_id:'-a857YYdjzgOdOjFFRsRXQ'});
   var query = Business.find({business_id:business_id});
   query.exec((err, businesses) => {
     console.log('daaaaaawg', businesses);
     var selectedBusiness = businesses[0];
+    if (selectedBusiness === undefined) {
+      res.status(500).send('node valid business id');
+    }
     var categoryArr = businesses[0].categories;
     for (var i =0; i < categoryArr.length; i++) {
       if (categoryArr[i] === 'Restaurants') {
