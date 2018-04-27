@@ -8,7 +8,7 @@ services:
     ports: 
       - '3005:3005'
   gallery:
-    iamge: rachelrong/yelp-gallery:gallery
+    image: rachelrong/yelp-gallery:gallery
     depends_on:
       - 'database'
     ports: 
