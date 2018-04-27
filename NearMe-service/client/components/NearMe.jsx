@@ -73,9 +73,7 @@ const NearMeModalContent = (props) => {
         <div className="nearMeModalHeader">
           <p>All {props.category} Nearby</p>
         </div>
-        {props.nearby.map((restaurant, index) => (
-          <NearMeModalItem restaurant={restaurant} key={index}/>
-        ))}
+        {props.nearby.map((restaurant, index) => (<NearMeModalItem restaurant={restaurant} key={index}/>))}
       </div>
     </div>
   )
@@ -97,11 +95,7 @@ const NearMeModalItem = (props) => {
 const NearMeList = (props) => ( 
   <ul className="nearMeList">
     {props.nearby.map((restaurant, index) => { 
-      if (index < 3) {
-        return (
-          <NearMeListItem restaurant={restaurant} key={index}/>
-        )
-      }
+      if (index < 3) {return (<NearMeListItem restaurant={restaurant} key={index}/>)}
     })}
   </ul>
 ); 
@@ -128,7 +122,7 @@ const NearMeRatings = (props) => {
   return (
     <span className="nearMeRatings"> 
       <span style={{'backgroundPositionY':starPosition + 'px'}} className="nearMeListStars"></span>
-       {props.numberOfRatings} reviews
+      {props.numberOfRatings} reviews
     </span>
   )
 }
