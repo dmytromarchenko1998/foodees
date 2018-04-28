@@ -20,7 +20,7 @@ services:
     ports: 
       - '3002:3002'
   proxy:
-    image: Dmytro-Proxy/
+    build: Dmytro-Proxy/
     depends_on:
       - 'database'
     ports: 
