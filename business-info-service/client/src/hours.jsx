@@ -7,11 +7,12 @@ class Hours extends React.Component {
     super(props)
     this.state = {
       hasHours: false,
-      daysOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      daysOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       currentDay: null,
       priceRange: {1:'Under $10', 2:'$11 - 30', 3:'$31 - 60' ,4:'Above $61'},
       priceRangeVal: null,
-      business_id:null
+      business_id:null,
+      isOpen:null
     }
   }
   
@@ -19,6 +20,7 @@ class Hours extends React.Component {
     this.checkRange = this.checkRange.bind(this);
     this.clockColor = this.clockColor.bind(this);
     this.showOpenOrClosed = this.showOpenOrClosed.bind(this);
+    this.checkifOpen = this.checkifOpen.bind(this);
     if (this.props.infors.hours !== undefined) {
       this.setState({'hasHours':true});
     } else {
@@ -27,13 +29,13 @@ class Hours extends React.Component {
     var date = new Date();
     var day = date.getDay();
     this.setState({
-      currentDay:this.state.daysOfWeek[day - 1], 
+      currentDay:this.state.daysOfWeek[day], 
       priceRangeVal:this.props.infors.attributes.RestaurantsPriceRange2,
       business_id:this.props.infors.business_id
-    })
+    }, this.checkifOpen)
   }
-
-  clockColor () {
+  
+  checkifOpen() {
     var day = new Date().getDay()
     var hours = new Date().getHours();
     var mins = new Date().getMinutes();
@@ -46,40 +48,79 @@ class Hours extends React.Component {
       return null;
     } else {
       var hoursArr = restaurantHours.split("-");
-      var openHour = hoursArr[0].split(":")[0];
-      var openMin = hoursArr[0].split(":")[1];
-      var closedHour = hoursArr[1].split(":")[0];
-
-      if(hours > openHour && hours < closedHour && mins > openMin) {
-        return 'green'
-      } else if ((openHour === '0') && (closedHour === '0')) {
-        return 'green'
-      } else {
-        return 'red'
+      var openHour = parseInt(hoursArr[0].split(":")[0]);
+      var openMin = parseInt(hoursArr[0].split(":")[1]);
+      var closedHour = parseInt(hoursArr[1].split(":")[0]);
+      var closedMin = parseInt(hoursArr[1].split(":")[1]);
+      var closedHourTF = parseInt(hoursArr[1].split(":")[0]);  
+      if (closedHour < 12) {
+        closedHour += 24
       }
+      if (closedMin === 0) {
+        closedMin += 60
+      }
+      if (hours > openHour && hours < closedHour && mins > openMin) {
+        if ((hours + 1) === closedHour) {
+          if (mins < closedMin) {
+            this.setState({isOpen:true});
+          } else {
+            this.setState({isOpen:false});
+          }
+        } else {
+          this.setState({isOpen:true});
+        }
+      } else if ((openHour === '0') && (closedHour === '0')) {
+        this.setState({isOpen:true});
+      } else if (closedHourTF <= openHour) {
+        if (day === 0) {
+          var prevRestaurantHours = this.props.infors.hours[this.state.daysOfWeek[6]];
+        } else {
+          var prevRestaurantHours = this.props.infors.hours[this.state.daysOfWeek[day - 1]];
+        }
+        var hoursArr = prevRestaurantHours.split("-");
+        var closedHour = parseInt(hoursArr[1].split(":")[0]);
+        var closedMin = parseInt(hoursArr[1].split(":")[1]);
+        if (closedMin === 0) {
+          closedMin += 60
+        }
+        if (hours < closedHour) {
+          if ((hours + 1) === closedHour) {
+            if (mins < closedMin) {
+              this.setState({isOpen:true});
+            } else {
+              this.setState({isOpen:false});
+            }
+          } else {
+            this.setState({isOpen:true});
+          }
+        } else {
+          this.setState({isOpen:false});
+        }
+      } else {
+        this.setState({isOpen:false});
+      }
+    }
+  }
 
+  clockColor () {
+    if (this.state.isOpen === null) {
+      return null;
+    } else if (this.state.isOpen){
+      return 'green'
+    } else {
+      return 'red'
     }
   }
 
   showOpenOrClosed (str) {
-    var hours = new Date().getHours();
-    var mins = new Date().getMinutes();
-    var restaurantHours = this.props.infors.hours[str]; 
 
-    if(restaurantHours === undefined) {
+    if(this.state.isOpen === null) {
       return null;
     } else {
-      var hoursArr = restaurantHours.split("-");
-      var openHour = hoursArr[0].split(":")[0];
-      var openMin = hoursArr[0].split(":")[1];
-      var closedHour = hoursArr[1].split(":")[0];
-
-      if(hours >= openHour && hours <= closedHour && mins >= openMin) {
-        return (<b style={{color: 'green'}}>Open Now</b>)
-      } else if ((closedHour === '0') && (openHour === '0')) {
-        return (<b style={{color: 'green'}}>Open Now</b>)
+      if(this.state.isOpen) {
+        return (<span className="closedOrOpen"><b style={{color: 'green'}}>Open Now</b></span>)
       } else {
-        return (<b style={{color: 'red'}}>Closed Now</b>)
+        return (<span className="closedOrOpen"><b style={{color: 'red'}}>Closed Now</b></span>)
       }
 
     }
@@ -104,7 +145,7 @@ class Hours extends React.Component {
       return (
         <div>
            <div className="smalltable">
-             <div className="isCurrentlyOpen"><i className="far fa-clock" style={{color: this.clockColor()}}></i><span style={{marginLeft: '10px'}}>Today   </span><CurrentHours convertTime={this.convertTime} showOpenOrClosed={this.showOpenOrClosed} hours={this.props.infors.hours[this.state.currentDay]}/></div>
+             <div className="isCurrentlyOpen"><i className="far fa-clock" style={{color: this.clockColor()}}></i><span style={{marginLeft: '10px'}}>Today   </span><CurrentHours convertTime={this.convertTime} currentDay={this.state.currentDay} showOpenOrClosed={this.showOpenOrClosed} hours={this.props.infors.hours[this.state.currentDay]}/></div>
              <p style={{borderTop: '1px solid #e6e6e6', height: '1px'}}></p>
              <p style={{marginLeft: '10px'}}><span className="money">{this.checkRange(this.state.priceRangeVal)}</span>  Price range<b style={{marginLeft: '10px'}}>{this.state.priceRange[this.state.priceRangeVal]}</b></p>
            </div>
@@ -146,7 +187,7 @@ const HourEntry = (props) => {
 
   var isToday = (day,str) => {
     var x = new Date().getDay()
-    if (day === (x - 1)) {
+    if (day === (x)) {
       return props.showOpenOrClosed(str)
     } else {
       return null;
@@ -164,7 +205,7 @@ const HourEntryTime = (props) => {
 
   var isToday = (day,str) => {
     var x = new Date().getDay()
-    if (day === (x - 1)) {
+    if (day === (x)) {
       return props.showOpenOrClosed(str)
     } else {
       return null;
@@ -173,7 +214,7 @@ const HourEntryTime = (props) => {
 
   return (
     <div className="hoursForDayTime">
-      <span className="timeForDay">{props.convertTime(props.hours) || 'Closed Today'} {isToday(props.dayNum, props.day)}</span>
+      <span className="timeForDay">{props.convertTime(props.hours)} {isToday(props.dayNum, props.day)}</span>
     </div>
   );
 }
@@ -182,7 +223,7 @@ const CurrentHours = (props) => {
   return (
     <div className="inlineHoursContainer">
       <span style={{'fontWeight':'bold'}}>{props.convertTime(props.hours)}</span>
-      <span style={{marginLeft: '10px'}}>{props.showOpenOrClosed('Sunday')}</span>
+      <span style={{marginLeft: '10px'}}>{props.showOpenOrClosed(props.currentDay)}</span>
     </div>
   )
 }

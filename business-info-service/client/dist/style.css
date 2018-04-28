@@ -215,6 +215,12 @@
   flex-flow: column;
   height: 145px;
 }
+.hoursTableDay :first-child {
+  order: 99;
+}
+.hoursTableTime :first-child {
+  order: 99;
+}
 .isCurrentlyOpen {
   display: inline-flex;
 }
@@ -237,4 +243,7 @@
 .inlineTFHours {
   margin-left: 5px;
   margin-right: 5px;
+}
+.closedOrOpen {
+  order: 99;
 }
