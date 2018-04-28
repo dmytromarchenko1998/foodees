@@ -88,7 +88,7 @@ class Hours extends React.Component {
   convertTime (hours){
     var hoursArr = hours.split('-');
     if ((hoursArr[0] === '0:00') && (hoursArr[0] === '0:00')) {
-      hours = <span>Open 24 hours</span>
+      hours = <span className="inlineTFHours"> Open 24 hours </span>
     } else {
       hours = <span className="inlineHours" ><p>{moment(hoursArr[0], 'HH:mm').format('hh:mm a') + ' - ' + moment(hoursArr[1], 'HH:mm').format('h:mm a')}</p></span>
     }
