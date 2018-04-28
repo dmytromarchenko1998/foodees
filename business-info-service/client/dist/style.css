@@ -26,12 +26,14 @@
   padding-right: 5px;
 }
 .HeaderRating {
-  /*background-color: red;*/
   color: #666;
   margin:2px 0px 0px 10px;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+}
+.HeaderRating :nth-child(2) {
+  margin-left: 5px;
 }
 .title {
     padding-top: 6px;
@@ -51,6 +53,7 @@
     line-height: 1.3125em;
     color: #d32323;
     margin-left: 27px;
+    font-weight: bold;
 }
 .hoursTable {
     display: flex;
@@ -60,6 +63,7 @@
     border-collapse: collapse;
     border-spacing: 0;
     min-width: 355px;
+    font-size: 14px;
 }
 .hoursForDay {
   display: flex;
@@ -71,6 +75,7 @@
 .editInfo {
   margin-left: 27px;
   margin-bottom: 5px;
+  font-size: 14px;
 }
 .businessInfoHeader {
   font-size: 16px;
@@ -78,8 +83,14 @@
   color: #d32323;
 }
 .businessInfoBody {
+  display: flex;
+  flex-flow: column;
   margin-left: 27px;
   min-width: 370px;
+}
+.businessInfoBody > p{
+  font-size: 14px;
+  line-height: .6;
 }
 .smalltable {
     padding: 11px;
@@ -87,10 +98,17 @@
     border: 1px solid #e6e6e6;
     border-radius: 4px;
     margin: 15px;
-    min-width: 370px;
+    width: 350px;
 }
+.smalltable.reservation {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+} 
 .reservationInput {
   width: 274px;
+  font-size: 12px;
+  text-align: center;
 }
 .ReservationButton {
   border-color: #28781e;
@@ -130,6 +148,7 @@
 .mapbox {
     background: #fff;
     border: 1px solid #ccc;
+    width: 100%;
 }
 .mainContainer {
   display: flex;
@@ -189,11 +208,12 @@
 .hoursTableTime {
   display: flex;
   flex-flow: column;
+  margin-left: 10px;
 }
 .hoursTableDay {
   display: flex;
   flex-flow: column;
-  height: 165px;
+  height: 145px;
 }
 .isCurrentlyOpen {
   display: inline-flex;
@@ -203,10 +223,14 @@
   min-width: 274px;
 }
 #SideBar {
-  width: 45%;
   margin: 0px;
+  width: 100%;
+}
+.sideBar {
+  width: 100%;
 }
 .isCurrentlyOpen {
   display: flex;
   align-items: center;
+  font-size: 14px;
 }

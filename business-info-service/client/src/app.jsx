@@ -16,7 +16,8 @@ class Header extends React.Component {
           GoodForMeal: true
         }
       },
-      loaded: false
+      loaded: false,
+      host:document.URL.split(':')[1]
     }
   }
 
@@ -24,7 +25,7 @@ class Header extends React.Component {
     var app = this;
     var business_id = document.URL.split('/')[4]
     $.ajax({
-      url : 'http://34.216.115.125:3002/info/',
+      url : 'http:' + this.state.host +':3002/info/',
       type : 'GET',
       data: {business_id: business_id},
       success : function(data){
@@ -67,7 +68,8 @@ class MainInfo extends React.Component {
           GoodForMeal: true
         }
       },
-      loaded: false
+      loaded: false,
+      host:document.URL.split(':')[1]
     }
   }
 
@@ -75,7 +77,7 @@ class MainInfo extends React.Component {
     var app = this;
     var business_id = document.URL.split('/')[4]
     $.ajax({
-      url : 'http://34.216.115.125:3002/info/',
+      url : 'http:' + this.state.host +':3002/info/',
       type : 'GET',
       data: {business_id: business_id},
       success : function(data){
@@ -120,7 +122,8 @@ class SideBar extends React.Component {
           GoodForMeal: true
         }
       },
-      loaded: false
+      loaded: false,
+      host:document.URL.split(':')[1]
     }
   }
 
@@ -128,7 +131,7 @@ class SideBar extends React.Component {
     var app = this;
     var business_id = document.URL.split('/')[4]
     $.ajax({
-      url : 'http://34.216.115.125:3002/info/',
+      url : 'http:' + this.state.host +':3002/info/',
       type : 'GET',
       data: {business_id: business_id},
       success : function(data){

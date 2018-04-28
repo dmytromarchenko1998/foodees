@@ -32,22 +32,22 @@ const BusinessInfo = function(props) {
  	<div>
  		<div className="businessInfoBody">
 	 		<h3 className="businessInfoHeader">More business info</h3>
-	 		<p>RestaurantsTableService  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsTableService)}</b></p>
-	 		<p>GoodForMeal  {goodForMeal.map((item) => <b key={item}> {uppercaseFirst(item)} </b>)}</p>
+	 		<p>Restaurants Table Service  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsTableService)}</b></p>
+	 		<p>Good For Meal  {goodForMeal.map((item) => <b key={item}> {uppercaseFirst(item)} </b>)}</p>
 	 		<p>Alcohol  <b>{booleanToYesOrNo(props.infors.attributes.Alcohol)}</b></p>
-	 		<p>RestaurantsGoodForGroups  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsGoodForGroups)}</b></p>
-	 		<p>NoiseLevel  <b>{uppercaseFirst(props.infors.attributes.NoiseLevel)}</b></p>
+	 		<p>Restaurants Good For Groups  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsGoodForGroups)}</b></p>
+	 		<p>Noise Level  <b>{uppercaseFirst(props.infors.attributes.NoiseLevel)}</b></p>
 	 		<p>WiFi  <b>{checkYesOrNo(props.infors.attributes.WiFi)}</b></p>
-	 		<p>RestaurantsAttire  <b>{uppercaseFirst(props.infors.attributes.RestaurantsAttire)}</b></p>
-	 		<p>RestaurantsReservations  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsReservations)}</b></p>
-	 		<p>OutdoorSeating  <b>{booleanToYesOrNo(props.infors.attributes.OutdoorSeating)}</b></p>
-	 		<p>BusinessAcceptsCreditCards  <b>{booleanToYesOrNo(props.infors.attributes.BusinessAcceptsCreditCards)}</b></p>
-	 		<p>BikeParking  <b>{booleanToYesOrNo(props.infors.attributes.BikeParking)}</b></p>
-	 		<p>RestaurantsDelivery  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsDelivery)}</b></p>
+	 		<p>Restaurants Attire  <b>{uppercaseFirst(props.infors.attributes.RestaurantsAttire)}</b></p>
+	 		<p>Restaurants Reservations  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsReservations)}</b></p>
+	 		<p>Outdoor Seating  <b>{booleanToYesOrNo(props.infors.attributes.OutdoorSeating)}</b></p>
+	 		<p>Business Accepts Credit Cards  <b>{booleanToYesOrNo(props.infors.attributes.BusinessAcceptsCreditCards)}</b></p>
+	 		<p>Bike Parking  <b>{booleanToYesOrNo(props.infors.attributes.BikeParking)}</b></p>
+	 		<p>Restaurants Delivery  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsDelivery)}</b></p>
 	 		<p>Ambience  {ambience.map((item) => <b key={item}>{uppercaseFirst(item)}</b>)}</p>
-	 		<p>RestaurantsTakeOut  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsTakeOut)}</b></p>
-	 		<p>RestaurantsTakeOut  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsTakeOut)}</b></p>
-	 		<p>BusinessParking  {businessParking.map((item) => <b key={item}>{uppercaseFirst(item)}  </b>)}</p>
+	 		<p>Restaurants TakeOut  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsTakeOut)}</b></p>
+	 		<p>Restaurants TakeOut  <b>{booleanToYesOrNo(props.infors.attributes.RestaurantsTakeOut)}</b></p>
+	 		<p>Business Parking  {businessParking.map((item) => <b key={item}>{uppercaseFirst(item)}  </b>)}</p>
  		</div>
  	</div>
  )

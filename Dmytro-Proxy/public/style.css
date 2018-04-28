@@ -41,3 +41,6 @@ body {
   max-width: 1500px;
   object-fit: cover;
 }
+#reviews {
+  min-width: 803px;
+}

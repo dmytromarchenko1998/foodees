@@ -97,7 +97,7 @@ class Reservation extends React.Component {
 	render() {
 		if (this.state.hasHours) {
 			return(
-				<div className="smalltable col-md-5">
+				<div className="smalltable reservation">
 					<h3><i className="far fa-calendar-minus" style={{color: "black"}} ></i> Make a Reservation</h3>
 					<div>
 						<form className="reservationForm">
