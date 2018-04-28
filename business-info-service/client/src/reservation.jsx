@@ -7,13 +7,22 @@ class Reservation extends React.Component {
 		super(props)
 		this.state = {
 			showCalendar: false,
-			selectedDate: new Date()
+			selectedDate: new Date(),
+			hasHours:false
 		}
 		// console.log('props: ', props)
 		this.toggleCalendar = this.toggleCalendar.bind(this)
 		this.setSelectedDate = this.setSelectedDate.bind(this)
 		this.setTimeArr = this.setTimeArr.bind(this);
 	}
+  
+  componentDidMount () {
+  	 if (this.props.infors.hours !== undefined) {
+      this.setState({'hasHours':true});
+    } else {
+      this.setState({'hasHours':false});
+    }
+  }
 
 	toggleCalendar () {
 		this.setState({
@@ -86,37 +95,41 @@ class Reservation extends React.Component {
 
 
 	render() {
-		return(
-			<div className="smalltable col-md-5">
-				<h3><i className="far fa-calendar-minus" style={{color: "black"}} ></i> Make a Reservation</h3>
-				<div>
-					<form className="reservationForm">
-						<input className="reservationInput"readOnly onClick={this.toggleCalendar} value={moment(this.state.selectedDate).format("MMM Do YY")}/>
-						{this.state.showCalendar ? (
-							<ReservationCalendar func={this.setSelectedDate}/>
-						) : (
-							null
-						)}
-							<div className="selectContainer">
-							<select id='res-Time' >
-								{this.setTimeArr().map((item) => <option value="item" key={item}> <i className="far fa-clock"></i> {item}</option>)}
-							</select>
-							<select className='numberPeopleDropDown'>
-							  <option value="1 person">1 person</option>
-	 						  <option value="2 people">2 people</option>
-							  <option value="3 people">3 people</option>
-							  <option value="4 people">4 people</option>
-							  <option value="5 people">5 people</option>
-	 						  <option value="6 people">6 people</option>
-							  <option value="7 people">7 people</option>
-							  <option value="8 people">8 people</option>
-							</select>
-						</div>
-						<div style={{width: "280px"}} className="ReservationButton" value="none" >Find a Table</div>
-					</form>
+		if (this.state.hasHours) {
+			return(
+				<div className="smalltable col-md-5">
+					<h3><i className="far fa-calendar-minus" style={{color: "black"}} ></i> Make a Reservation</h3>
+					<div>
+						<form className="reservationForm">
+							<input className="reservationInput"readOnly onClick={this.toggleCalendar} value={moment(this.state.selectedDate).format("MMM Do YY")}/>
+							{this.state.showCalendar ? (
+								<ReservationCalendar func={this.setSelectedDate}/>
+							) : (
+								null
+							)}
+								<div className="selectContainer">
+								<select id='res-Time' >
+									{this.setTimeArr().map((item) => <option value="item" key={item}> <i className="far fa-clock"></i> {item}</option>)}
+								</select>
+								<select className='numberPeopleDropDown'>
+								  <option value="1 person">1 person</option>
+		 						  <option value="2 people">2 people</option>
+								  <option value="3 people">3 people</option>
+								  <option value="4 people">4 people</option>
+								  <option value="5 people">5 people</option>
+		 						  <option value="6 people">6 people</option>
+								  <option value="7 people">7 people</option>
+								  <option value="8 people">8 people</option>
+								</select>
+							</div>
+							<div style={{width: "280px"}} className="ReservationButton" value="none" >Find a Table</div>
+						</form>
+					</div>
 				</div>
-			</div>
-		)
+			)
+	  } else {
+	  	return (<p></p>)
+	  }
 	}
 }
 

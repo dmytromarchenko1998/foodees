@@ -20,7 +20,7 @@ services:
     ports: 
       - '3002:3002'
   proxy:
-    image: dmytromarchenko1998/nearme-service:proxy
+    image: Dmytro-Proxy/
     depends_on:
       - 'database'
     ports: 
