@@ -20,6 +20,9 @@ class NearMe extends React.Component {
       success: (data) => {
         var data = JSON.parse(data);
         this.setState({nearby:data[1], category:data[0].categories[0]});
+      },
+      error: (err) => {
+        console.log(err);
       }
     })
   }
