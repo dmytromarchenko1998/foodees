@@ -23,28 +23,29 @@ app.get('/api/:id', (req, res) => {
     var selectedBusiness = businesses[0];
     if (selectedBusiness === undefined) {
       res.status(500).send('not valid business_id')
-    }
-    var categoryArr = businesses[0].categories;
-    for (var i =0; i < categoryArr.length; i++) {
-      if (categoryArr[i] === 'Restaurants') {
-        categoryArr.splice(i, 1);
-        i--;
-      }
-    }
-    var query = Business.find({categories:{$in:categoryArr}});
-    query.exec((err, businesses) => {
-      // console.log('digity-dawg', businesses)
-      if (businesses.length > 3) {
-        for (var i = 0; i < businesses.length; i++) {
-          if (businesses[i].business_id === business_id) {
-            businesses.splice(i, 1);
-            i--;
-          }
+    } else {      
+      var categoryArr = businesses[0].categories;
+      for (var i =0; i < categoryArr.length; i++) {
+        if (categoryArr[i] === 'Restaurants') {
+          categoryArr.splice(i, 1);
+          i--;
         }
       }
-      // console.log(JSON.stringify(businesses));
-      res.end(JSON.stringify([selectedBusiness, businesses]));
-    })
+      var query = Business.find({categories:{$in:categoryArr}});
+      query.exec((err, businesses) => {
+        // console.log('digity-dawg', businesses)
+        if (businesses.length > 3) {
+          for (var i = 0; i < businesses.length; i++) {
+            if (businesses[i].business_id === business_id) {
+              businesses.splice(i, 1);
+              i--;
+            }
+          }
+        }
+        // console.log(JSON.stringify(businesses));
+        res.end(JSON.stringify([selectedBusiness, businesses]));
+      })
+    }
   })
 })
 
