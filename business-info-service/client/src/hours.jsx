@@ -32,9 +32,16 @@ class Hours extends React.Component {
       currentDay:this.state.daysOfWeek[day], 
       priceRangeVal:this.props.infors.attributes.RestaurantsPriceRange2,
       business_id:this.props.infors.business_id
-    }, this.checkifOpen)
+    }, this.refreshIsOpen)
   }
   
+  refreshIsOpen(){
+    var context = this;
+    context.checkifOpen();
+    setInterval(context.checkifOpen, 5000)
+  }
+
+
   checkifOpen() {
     var day = new Date().getDay()
     var hours = new Date().getHours();
@@ -59,7 +66,9 @@ class Hours extends React.Component {
       if (closedMin === 0) {
         closedMin += 60
       }
-      if (hours > openHour && hours < closedHour && mins > openMin) {
+      console.log(mins)
+      console.log(openMin)
+      if (hours >= openHour && hours < closedHour && mins > openMin) {
         if ((hours + 1) === closedHour) {
           if (mins < closedMin) {
             this.setState({isOpen:true});
